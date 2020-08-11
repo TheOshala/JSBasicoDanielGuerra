@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 2</title>
+    <script src="funciones.js"></script>
+    <script>
+        var contador = 0, a=0;
+        var aux = "";
+        var cantones = new Array("Antonio Ante", "Cotacachi", "Ibarra", "Otavalo", "Pimampiro", "San Miguel de Urcuquí");
+
+        function obtenerCanton() {
+            if (contador == cantones.length) {
+                contador = 0;
+            }
+            return cantones[contador++];
+        }
+        function obtenerCantonAcumulado() {    
+            var cantones = new Array("Antonio Ante", "Cotacachi", "Ibarra", "Otavalo", "Pimampiro", "San Miguel de Urcuquí");                             
+            aux += cantones[a] + " ";
+            document.getElementById("div2").innerHTML=aux;
+            a++;           
+            if (a == cantones.length) {
+                a = 0;
+                aux = "";
+            }
+        }
+        function listaCantones() {
+            var text = "<ul>";
+            cantones.sort();
+            for (i = 0; i < cantones.length; i++) {
+                text += "<li>" + cantones[i] + "</li>";
+            }
+            text += "</ul>";
+            document.getElementById("div3").innerHTML=text;
+        }
+        function forOfCantones(){
+            for(const i of cantones){
+                const lista = document.createElement('li');
+                lista.innerText = i;
+                document.getElementById("div3").appendChild(lista);
+            }
+        }
+        function forInCantones(){
+            for(const i in cantones){
+                const lista = document.createElement('li');
+                lista.innerText = cantones[i]
+                document.getElementById("div3").appendChild(lista);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <h3></h3>
+    </div>
+    <button onclick="document.getElementById('div1').innerHTML=obtenerCanton()">Mostrar Cantones</button>
+    </br>
+    </br>
+    <div id="div2">
+        <h3></h3>
+    </div>
+    <button onclick="obtenerCantonAcumulado()">Mostrar Cantones Acumulados</button>
+    </br>
+    </br>
+    <div id="div3">
+        <h3></h3>
+    </div>
+    <button onclick="forOfCantones()">Mostrar Lista Cantones</button>
+
+</body>
+
+</html>

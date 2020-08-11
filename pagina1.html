@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1</title>
+    <script src="funciones.js"></script>
+    <script>
+        var contador = 4;
+        function cambiarColorH4() {
+            document.getElementById("nombre").style.backgroundColor = "orange";
+            document.getElementById("nombre").style.color = "blue";
+        }
+        function aumentarTamanioLetra() {
+            contador += 2;
+            document.getElementById("div1").style.fontSize = contador + "mm";
+        }
+    </script>
+</head>
+
+<body>
+    <h4 id="nombre">Cristian Daniel Guerra Ruiz</h4>
+    <button onclick="document.getElementById('nombre').innerHTML='19/02/1996'">Cambiar Texto</button>
+    <button onclick="cambiarColorH4()">Cambiar Color</button>
+
+    <div id="div1">
+        <h3>Herramientas de Programación</h3>
+    </div>
+    <button onclick="document.getElementById('div1').style.textAlign='left'">Izquierda</button>
+    <button onclick="document.getElementById('div1').style.textAlign='center'">Centro</button>
+    <button onclick="document.getElementById('div1').style.textAlign='right'">Derecha</button>
+    </br>
+    </br>
+    <button onclick="aumentarTamanioLetra()">Aumentar</button>
+    <button onclick="document.getElementById('div1').style.display='none'">Ocultar</button>
+
+</body>
+
+</html>
